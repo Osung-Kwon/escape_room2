@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교실 방탈출 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- 배경 이미지 -->
+        <img src="https://github.com/Osung-Kwon/escape_room2/blob/main/bg01.jpg?raw=true" alt="교실 배경" class="background-image">
+
+        <!-- 클릭 가능한 오브젝트 영역 -->
+        <div class="clickable-area" id="area-blackboard" title="칠판을 조사한다"></div>
+        <div class="clickable-area" id="area-teacher-desk" title="교사용 책상을 조사한다"></div>
+        <div class="clickable-area" id="area-student-desk" title="학생 책상을 조사한다"></div>
+        <div class="clickable-area" id="area-clock" title="시계를 조사한다"></div>
+        <div class="clickable-area" id="area-door" title="문으로 탈출을 시도한다"></div>
+
+        <!-- 힌트 표시 영역 -->
+        <div id="clue-display">
+            <h2>획득한 힌트</h2>
+            <p id="clue-text">아직 획득한 힌트가 없습니다.</p>
+        </div>
+    </div>
+
+    <!-- 퀴즈 모달 -->
+    <div id="puzzle-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="puzzle-title"></h3>
+            <p id="puzzle-question"></p>
+            <input type="text" id="puzzle-answer" placeholder="정답을 입력하세요">
+            <button id="puzzle-submit">확인</button>
+            <p id="puzzle-feedback"></p>
+        </div>
+    </div>
+    
+    <!-- 탈출 모달 -->
+    <div id="door-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>탈출 시도</h3>
+            <p>비밀번호 4자리를 입력하세요.</p>
+            <input type="text" id="door-password" placeholder="비밀번호" maxlength="4">
+            <button id="door-submit">탈출</button>
+            <p id="door-feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
